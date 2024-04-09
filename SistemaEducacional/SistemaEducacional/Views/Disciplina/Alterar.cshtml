@@ -1,0 +1,45 @@
+﻿@model SistemaEducacional.Models.DisciplinaModel
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card" style="width: 900px">
+            <div class="card-body">
+                <div style="margin-right:60px; margin-block-end:30px">
+                    <small class="card-title">
+                        <strong>
+                            ALterar Direção
+                        </strong>
+                    </small>
+                </div>
+
+                <form asp-controller="Disciplina" asp-action="Alterar">
+                    <input type="hidden" value="@Model.Id" asp-for="@Model.Id" />
+                    <div class="container text-center">
+                        <div class="row d-flex justify-content-center">
+                            <label for="usuario" class="col-sm-2 col-form-label">
+                                <small><strong>Nome</strong></small>
+                            </label>
+
+                            <div class="col-auto">
+                                <input asp-for="@Model.Nome" type="text" value="@Model.Nome" class="form-control align-content-xl-center" id="usuario">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <label for="senha" class="col-sm-2 col-form-label">
+                                <small><strong>Data Criação</strong></small>
+                            </label>
+                            <div class="col-auto text-center">
+                                <input asp-for="@Model.DataCriacao" value="@Model.DataCriacao" type="text" class="form-control" id="senha">
+                            </div>
+                        </div>
+                        <br />
+                        <div style="margin-left:200px; margin-top:30px">
+                            <input class="btn btn-outline-secondary" type="submit" value="Alterar" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

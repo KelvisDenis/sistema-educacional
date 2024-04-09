@@ -1,0 +1,68 @@
+using Microsoft.AspNetCore.Mvc;
+using SistemaEducacional.Models;
+using SistemaEducacional.Services;
+using SistemaEducacional.Services.Session;
+using System.Diagnostics;
+
+namespace SistemaEducacional.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly DirecaoService _direcao;
+        private readonly Isession _Isession;
+
+        public HomeController(DirecaoService logger, Isession isession)
+        {
+            _direcao = logger;
+            _Isession = isession;
+        }
+        [HttpGet("/")]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost("/Login/")]
+        public async Task<IActionResult> Login(string usuario, string senha)
+        {
+            if (usuario == null || senha == null) return View(nameof(Index));
+
+           var user = await _direcao.GetLoginAsync(usuario);
+            if (user == null) return View(nameof(Index));
+            _Isession.CreateSession(user);
+            return View(nameof(Home));
+        }
+
+        [HttpGet("/Home/")]
+        public IActionResult Home()
+        {
+            if(_Isession.GetSession() == null) return View(nameof(Index));
+            return View();
+        }
+
+        public IActionResult Alterar()
+        {
+            var user = _Isession.GetSession();
+            if (user == null) return View(nameof(Home));
+            return View(user);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Alterar(DirecaoModel? model, string? senhaAntiga,
+            string? confirmarSenha, string? novaSenha )
+        {
+            if (model == null || novaSenha == null || confirmarSenha == null
+                || senhaAntiga == null) return View();
+            model.Senha = novaSenha;
+            await _direcao.UpdateAsync(model, senhaAntiga);
+            return View(nameof(Home));
+        }
+
+        [HttpGet("/exit/")]
+        public IActionResult Exit()
+        {
+            _Isession.RemoveSession();
+            return View(nameof(Index));
+        }
+
+    }
+}
