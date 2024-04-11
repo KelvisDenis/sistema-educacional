@@ -15,6 +15,7 @@ namespace SistemaEducacional.Infraestrutura
         public DbSet<DisciplinaModel> DisciplinaModels { get; set; }
         public DbSet<DocenteModel> DocenteModels { get; set; }
         public DbSet<TurmaModel> TurmaModels { get; set; }
+        public DbSet<NotasModel> NotasModels { get; set; }
 
     }
 }

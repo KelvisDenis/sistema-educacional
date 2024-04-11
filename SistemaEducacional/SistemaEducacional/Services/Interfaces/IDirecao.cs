@@ -6,8 +6,10 @@ namespace SistemaEducacional.Services.Interfaces
     {
         public Task CreateAsync(DirecaoModel model);
         public Task<DirecaoModel> GetIdAsync(int? id);
-        public Task<ICollection<DirecaoModel>> ListAsync();
+        public Task<DirecaoModel> GetLoginAsync(string? user);
+        public  Task<DirecaoModel> GetAsync(string? user);
+        public Task<List<DirecaoModel>> ListAsync();
         public Task DeleteAsync(int? id);
-        public Task UpdateAsync(DirecaoModel? model);
+        public Task UpdateAsync(DirecaoModel? model, string? senha);
     }
 }

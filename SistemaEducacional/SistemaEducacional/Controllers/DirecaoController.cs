@@ -8,11 +8,11 @@ namespace SistemaEducacional.Controllers
 {
     public class DirecaoController : Controller
     {
-        private readonly DirecaoService _service;
+        private readonly IDirecao _service;
 
         private readonly Isession _Isession;
 
-        public DirecaoController(DirecaoService service, Isession isession)
+        public DirecaoController(IDirecao service, Isession isession)
         {
             _service = service;
             _Isession = isession;
@@ -23,7 +23,18 @@ namespace SistemaEducacional.Controllers
             var model = await _service.ListAsync();
             return View(model);
         }
-
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(string? ConfSenha, DirecaoModel? model)
+        {
+            if(!ModelState.IsValid || model.Senha != ConfSenha) return View(model);
+            await _service.CreateAsync(model);
+            var obj = await _service.ListAsync();
+            return View(nameof(Index), obj);
+        }
         public async Task<IActionResult> Alterar(int? id)
         {
             var obj = await _service.GetIdAsync(id);

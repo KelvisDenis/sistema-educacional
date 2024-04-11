@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|c:\\users\\denis\\music\\sistema educ\\sistemaeducacional\\sistemaeducacional\\controllers\\disciplinacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|solutionrelative:sistemaeducacional\\controllers\\disciplinacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|c:\\users\\denis\\music\\sistema educ\\sistemaeducacional\\sistemaeducacional\\views\\disciplina\\alterar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|solutionrelative:sistemaeducacional\\views\\disciplina\\alterar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|c:\\users\\denis\\music\\sistema educ\\sistemaeducacional\\sistemaeducacional\\services\\direcaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|solutionrelative:sistemaeducacional\\services\\direcaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|c:\\users\\denis\\music\\sistema educ\\sistemaeducacional\\sistemaeducacional\\services\\disciplinaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|solutionrelative:sistemaeducacional\\services\\disciplinaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|c:\\users\\denis\\music\\sistema educ\\sistemaeducacional\\sistemaeducacional\\controllers\\alunocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|solutionrelative:sistemaeducacional\\controllers\\alunocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Alterar.cshtml",
-              "DocumentMoniker": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Views\\Disciplina\\Alterar.cshtml",
-              "RelativeDocumentMoniker": "SistemaEducacional\\Views\\Disciplina\\Alterar.cshtml",
-              "ToolTip": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Views\\Disciplina\\Alterar.cshtml",
-              "RelativeToolTip": "SistemaEducacional\\Views\\Disciplina\\Alterar.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAA0AAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-09T22:47:18.404Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DisciplinaService.cs",
-              "DocumentMoniker": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Services\\DisciplinaService.cs",
-              "RelativeDocumentMoniker": "SistemaEducacional\\Services\\DisciplinaService.cs",
-              "ToolTip": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Services\\DisciplinaService.cs",
-              "RelativeToolTip": "SistemaEducacional\\Services\\DisciplinaService.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAmwDUAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T22:39:40.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DisciplinaController.cs",
-              "DocumentMoniker": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Controllers\\DisciplinaController.cs",
-              "RelativeDocumentMoniker": "SistemaEducacional\\Controllers\\DisciplinaController.cs",
-              "ToolTip": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Controllers\\DisciplinaController.cs",
-              "RelativeToolTip": "SistemaEducacional\\Controllers\\DisciplinaController.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAIwB0AAAAIAAAA",
+              "Title": "AlunoController.cs",
+              "DocumentMoniker": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Controllers\\AlunoController.cs",
+              "RelativeDocumentMoniker": "SistemaEducacional\\Controllers\\AlunoController.cs",
+              "ToolTip": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Controllers\\AlunoController.cs",
+              "RelativeToolTip": "SistemaEducacional\\Controllers\\AlunoController.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAswCUAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T22:36:28.842Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DirecaoService.cs",
-              "DocumentMoniker": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Services\\DirecaoService.cs",
-              "RelativeDocumentMoniker": "SistemaEducacional\\Services\\DirecaoService.cs",
-              "ToolTip": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Services\\DirecaoService.cs",
-              "RelativeToolTip": "SistemaEducacional\\Services\\DirecaoService.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAuwDsAAABRAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T21:22:53.127Z",
+              "WhenOpened": "2024-04-11T03:02:32.466Z",
               "EditorCaption": ""
             }
           ]

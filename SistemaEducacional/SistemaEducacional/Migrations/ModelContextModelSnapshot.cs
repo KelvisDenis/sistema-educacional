@@ -36,10 +36,19 @@ namespace SistemaEducacional.Migrations
                     b.Property<DateTime?>("DataNascimento")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("IdNota")
+                        .HasColumnType("integer");
+
                     b.Property<int?>("IdTurma")
                         .HasColumnType("integer");
 
                     b.Property<string>("Nome")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SenhaTemporaria")
                         .HasColumnType("text");
 
                     b.Property<int?>("TurmaModelId")
@@ -113,10 +122,16 @@ namespace SistemaEducacional.Migrations
                     b.Property<DateTime?>("DataNascimento")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
                     b.Property<int?>("IdTurma")
                         .HasColumnType("integer");
 
                     b.Property<string>("Nome")
+                        .HasColumnType("text");
+
+                    b.Property<string>("SenhaTemporaria")
                         .HasColumnType("text");
 
                     b.Property<int?>("TurmaModelId")
@@ -127,6 +142,33 @@ namespace SistemaEducacional.Migrations
                     b.HasIndex("TurmaModelId");
 
                     b.ToTable("DocenteModels");
+                });
+
+            modelBuilder.Entity("SistemaEducacional.Models.NotasModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AlunoModelId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("IdDisciplina")
+                        .HasColumnType("integer");
+
+                    b.Property<double?>("Nota")
+                        .HasColumnType("double precision");
+
+                    b.Property<double?>("Recuperacao")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlunoModelId");
+
+                    b.ToTable("NotasModel");
                 });
 
             modelBuilder.Entity("SistemaEducacional.Models.TurmaModel", b =>
@@ -163,6 +205,18 @@ namespace SistemaEducacional.Migrations
                     b.HasOne("SistemaEducacional.Models.TurmaModel", null)
                         .WithMany("Docentes")
                         .HasForeignKey("TurmaModelId");
+                });
+
+            modelBuilder.Entity("SistemaEducacional.Models.NotasModel", b =>
+                {
+                    b.HasOne("SistemaEducacional.Models.AlunoModel", null)
+                        .WithMany("Notas")
+                        .HasForeignKey("AlunoModelId");
+                });
+
+            modelBuilder.Entity("SistemaEducacional.Models.AlunoModel", b =>
+                {
+                    b.Navigation("Notas");
                 });
 
             modelBuilder.Entity("SistemaEducacional.Models.TurmaModel", b =>

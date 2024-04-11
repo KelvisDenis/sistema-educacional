@@ -6,7 +6,7 @@ using SistemaEducacional.Services.Interfaces;
 
 namespace SistemaEducacional.Services
 {
-    public class DirecaoService
+    public class DirecaoService: IDirecao
     {
         private readonly ModelContext _context;
         public DirecaoService(ModelContext context) 
@@ -15,7 +15,8 @@ namespace SistemaEducacional.Services
         }
         public async Task CreateAsync(DirecaoModel model)
         {
-            await _context.AddAsync(model);
+
+            await _context.DirecaoModels.AddAsync(model);
             await _context.SaveChangesAsync();
         }
 

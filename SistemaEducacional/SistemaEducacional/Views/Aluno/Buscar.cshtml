@@ -1,0 +1,53 @@
+﻿@model SistemaEducacional.Models.AlunoModel
+
+<nav class="navbar bg-body-tertiary">
+    <div style="margin-left:350px" class="container-fluid">
+        <form asp-action="Buscar" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="nome">
+            <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+        </form>
+    </div>
+</nav>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Data Nascimento</th>
+            <th scope="col">Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            <tr>
+                <th scope="row">@Model.Nome</th>
+                <td>@Model.Cpf</td>
+                <td>@Model.DataNascimento.Value</td>
+                <td>
+                    <a asp-route-id="@Model.Id" asp-action="Alterar">Alterar</a>
+                    <a asp-route-id="@Model.Id" asp-action="Excluir">Excluir</a>
+                </td>
+            </tr>
+
+
+        }
+        @{
+            else
+            {
+                <tr>
+                    <th scope="row">Não Encontrado</th>
+                    <td>Não Encontrado</td>
+                    <td>Não Encontrado</td>
+                    <td>
+                        Não Encontrado
+                    </td>
+                </tr>
+            }
+
+        }
+
+    </tbody>
+</table>
+

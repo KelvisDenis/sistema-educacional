@@ -1,0 +1,65 @@
+﻿@model SistemaEducacional.Models.AlunoModel
+@{
+    Random hash = new Random();
+}
+<form asp-controller="Docente" asp-action="Create">
+    <h2 style="margin-left:400px">Aluno</h2>
+    <div class="row">
+        <div class="container text-center">
+            <div class="row d-flex justify-content-center">
+                <label for="usuario" class="col-sm-2 col-form-label">
+                    <small><strong>Nome</strong></small>
+                </label>
+
+                <div class="col-auto">
+                    <input asp-for="@Model.Nome" type="text" class="form-control align-content-xl-center" id="usuario">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <label for="usuario" class="col-sm-2 col-form-label">
+                    <small><strong>Cpf</strong></small>
+                </label>
+
+                <div class="col-auto">
+                    <input asp-for="@Model.Cpf" type="text" class="form-control align-content-xl-center" id="usuario">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <label for="senha" class="col-sm-2 col-form-label">
+                    <small><strong>Data Criação</strong></small>
+                </label>
+                <div class="col-auto text-center">
+                    <input asp-for="@Model.DataNascimento" type="date" class="form-control" id="senha">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <label for="usuario" class="col-sm-2 col-form-label">
+                    <small><strong>Email</strong></small>
+                </label>
+
+                <div class="col-auto">
+                    <input asp-for="@Model.Email" type="text" class="form-control align-content-xl-center" id="usuario">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <label for="usuario" class="col-sm-2 col-form-label">
+                    <small><strong>Senha gerada</strong></small>
+                </label>
+
+                <div class="col-auto">
+                    <input type="text" value="@hash.Next()"></input>
+                </div>
+            </div>
+            <br />
+            <div style="margin-left:200px; margin-top:30px">
+                <input asp-for="@Model.SenhaTemporaria" class="btn btn-outline-secondary" type="submit" value="Criar" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    var bt = document.getElementById("usuario")
+    bt.addEventListener('click', function () {
+    })
+</script>

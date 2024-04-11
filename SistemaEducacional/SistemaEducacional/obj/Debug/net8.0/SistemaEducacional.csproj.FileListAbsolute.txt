@@ -103,3 +103,4 @@ C:\Users\denis\Music\Sistema educ\SistemaEducacional\SistemaEducacional\obj\Debu
 C:\Users\denis\Music\Sistema educ\SistemaEducacional\SistemaEducacional\obj\Debug\net8.0\SistemaEducacional.pdb
 C:\Users\denis\Music\Sistema educ\SistemaEducacional\SistemaEducacional\obj\Debug\net8.0\SistemaEducacional.genruntimeconfig.cache
 C:\Users\denis\Music\Sistema educ\SistemaEducacional\SistemaEducacional\obj\Debug\net8.0\ref\SistemaEducacional.dll
+C:\Users\denis\Music\Sistema educ\SistemaEducacional\SistemaEducacional\obj\Debug\net8.0\SistemaEducacional.sourcelink.json

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SistemaEducacional.Models;
 using SistemaEducacional.Services;
+using SistemaEducacional.Services.Interfaces;
 using SistemaEducacional.Services.Session;
 using System.Diagnostics;
 
@@ -8,10 +9,10 @@ namespace SistemaEducacional.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly DirecaoService _direcao;
+        private readonly IDirecao _direcao;
         private readonly Isession _Isession;
 
-        public HomeController(DirecaoService logger, Isession isession)
+        public HomeController(IDirecao logger, Isession isession)
         {
             _direcao = logger;
             _Isession = isession;

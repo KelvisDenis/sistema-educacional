@@ -24,6 +24,18 @@ namespace SistemaEducacional.Controllers
             var model = await _docente.ListAsync();
             return View(model);
         }
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(DocenteModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            await _docente.CreateAsync(model);
+            var obj = await _docente.ListAsync();
+            return View(nameof(Index), obj);
+        }
 
         public async Task<IActionResult> Alterar(int? id)
         {

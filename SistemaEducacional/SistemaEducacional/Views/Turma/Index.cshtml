@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SistemaEducacional.Models.TurmaModel>
+@{
+    ViewData["Title"] = "Docente";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SistemaEducacional</title>
+    <link rel="stylesheet" href="~/css/Indexcss.css" />
+</head>
+<nav class="navbar bg-body-tertiary">
+    <h2 style="margin-left:400px">Turma</h2>
+    <a style="margin-right: 300px; width:50px" type="submit" asp-controller="Turma" asp-action="Create" class="btn btn-outline-secondary">+</a>
+    <div style="margin-left:350px" class="container-fluid">
+        <form asp-controller="Docente" asp-action="Buscar" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="nome">
+            <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+        </form>
+    </div>
+</nav>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome da turma</th>
+            <th scope="col">Ano</th>
+            <th scope="col">Data criação</th>
+            <th scope="col">Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.NomeTurma</th>
+                <td>@item.AnoTurma</td>
+                <td>@item.DataCriacao.Value</td>
+                <td>
+                    <a asp-route-id="@item.Id" asp-controller="Turma" asp-action="Alterar">Alterar</a>
+                    <a asp-route-id="@item.Id" asp-controller="Turma" asp-action="Excluir">Excluir</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

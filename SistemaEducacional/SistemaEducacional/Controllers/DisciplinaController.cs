@@ -23,7 +23,20 @@ namespace SistemaEducacional.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Alterar(int? id)
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(DisciplinaModel model)
+        {
+            if(!ModelState.IsValid) return View(model); 
+            await _disciplina.CreateAsync(model);
+            var obj = await _disciplina.ListAsync();
+            return View(nameof(Index), obj);
+        }
+
+            public async Task<IActionResult> Alterar(int? id)
         {
             var obj = await _disciplina.GetIdAsync(id);
             return View(obj);
@@ -41,6 +54,7 @@ namespace SistemaEducacional.Controllers
             var aluno = await _disciplina.GetAsync(nome);
             return View(aluno);
         }
+
         public async Task<IActionResult> Excluir(int? id)
         {
             await _disciplina.DeleteAsync(id);

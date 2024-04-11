@@ -14,10 +14,11 @@ builder.Services.AddDistributedMemoryCache();
 
 builder.Services.AddScoped<Isession, Sessao>();
 builder.Services.AddScoped<IAluno, AlunoService>();
-builder.Services.AddScoped<DirecaoService>();
+builder.Services.AddScoped<IDirecao,DirecaoService>();
 builder.Services.AddScoped<IDocente, DocenteService>();
 builder.Services.AddScoped<IDisciplina, DisciplinaService>();
 builder.Services.AddScoped<ITurma, TurmaService>();
+builder.Services.AddScoped<INota, NotaService>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 

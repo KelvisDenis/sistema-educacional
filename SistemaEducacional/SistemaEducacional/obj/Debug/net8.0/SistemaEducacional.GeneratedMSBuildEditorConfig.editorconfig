@@ -18,12 +18,32 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\denis\Music\Sistema educ\SistemaEducacional\SistemaEducacional
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Aluno/Buscar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cQnVzY2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Aluno/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Aluno/Emitir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cRW1pdGlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Aluno/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Direcao/Alterar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZWNhb1xBbHRlcmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Direcao/Buscar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZWNhb1xCdXNjYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Direcao/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZWNhb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Direcao/Index.cshtml]
@@ -38,6 +58,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY2lwbGluYVxCdXNjYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Disciplina/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY2lwbGluYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Disciplina/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY2lwbGluYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,12 +74,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jZW50ZVxCdXNjYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Docente/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jZW50ZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Docente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Home/Alterar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbHRlcmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Home/Home.cshtml]
@@ -72,6 +104,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Turma/Alterar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcQWx0ZXJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Turma/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/Turma/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHVybWFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/denis/Music/Sistema educ/SistemaEducacional/SistemaEducacional/Views/_ViewImports.cshtml]

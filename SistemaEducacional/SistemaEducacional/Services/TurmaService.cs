@@ -42,7 +42,10 @@ namespace SistemaEducacional.Services
 
         public async Task<TurmaModel> GetIdAsync(int? id)
         {
-            return await _context.TurmaModels.FirstOrDefaultAsync(x => x.Id == id);
+            var turma = await _context.TurmaModels.FirstOrDefaultAsync(x => x.Id == id);
+            turma.Docentes = await _context.DocenteModels.ToListAsync();
+            turma.Alunos = await _context.AlunoModels.ToListAsync();
+            return turma;
         }
 
         public async Task<ICollection<TurmaModel>> ListAsync()
