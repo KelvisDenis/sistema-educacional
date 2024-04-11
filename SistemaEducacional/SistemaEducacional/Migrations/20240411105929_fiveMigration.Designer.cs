@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SistemaEducacional.Infraestrutura;
@@ -11,9 +12,11 @@ using SistemaEducacional.Infraestrutura;
 namespace SistemaEducacional.Migrations
 {
     [DbContext(typeof(ModelContext))]
-    partial class ModelContextModelSnapshot : ModelSnapshot
+    [Migration("20240411105929_fiveMigration")]
+    partial class fiveMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -164,8 +167,8 @@ namespace SistemaEducacional.Migrations
                     b.Property<double?>("Nota")
                         .HasColumnType("double precision");
 
-                    b.Property<string>("Tipo")
-                        .HasColumnType("text");
+                    b.Property<double?>("Recuperacao")
+                        .HasColumnType("double precision");
 
                     b.HasKey("Id");
 

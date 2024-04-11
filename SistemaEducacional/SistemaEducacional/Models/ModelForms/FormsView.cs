@@ -9,5 +9,6 @@
         public CheckModel? CheckModel { get; set; }
         public AlunoModel? AlunoModel { get; set; }
         public List<NotasModel>? NotasModels { get; set; }
+        public BoletimModel? BoletimModels { get; set; } = new BoletimModel();
     }
 }

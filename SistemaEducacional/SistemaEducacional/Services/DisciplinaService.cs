@@ -44,7 +44,7 @@ namespace SistemaEducacional.Services
             return _context.DisciplinaModels.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<ICollection<DisciplinaModel>> ListAsync()
+        public async Task<List<DisciplinaModel>> ListAsync()
         {
             return await _context.DisciplinaModels.ToListAsync();
         }

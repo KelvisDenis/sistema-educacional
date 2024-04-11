@@ -1,5 +1,197 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model SistemaEducacional.Models.ModelForms.FormsView
 @{
+    Layout = "";
+    double Av1 = 0;
+    double Av2 = 0;
+    var notas = Model.BoletimModels.Notas;
+    int cont = Model.BoletimModels.Discplinas.Count;
+    double media;
+    var re = notas.FirstOrDefault(x => x.Tipo == "Recuperacao");
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SistemaEducacional</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SistemaEducacional.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+       
+            <nav style="height:40px" class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                <a style="color:black" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Home">Edu Station</a>
+                </div>
+            </nav>
+        <nav  class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <small style="font-size:18px; " class="navbar-brand">Nome: @Model.AlunoModel.Nome</small>
+                </div>
+            </nav>
+
+            <!-- As a heading -->
+            <nav  class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                <small style="font-size:18px" class="navbar-brand ">Cpf: @Model.AlunoModel.Cpf</small>
+                </div>
+            <div class="container-fluid">
+                <small style="font-size:18px" class="navbar-brand ">Data nascimento: @Model.AlunoModel.DataNascimento.Value.Date</small>
+            </div>
+            </nav>
+            <hr />
+    </header>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Disciplina</th>
+                <th scope="col">Nota 1</th>
+                <th scope="col">Nota 2</th>
+                <th scope="col">Recuperação</th>
+                <th scope="col">Media Final</th>
+                <th scope="col">Situação</th>
+            </tr>
+        </thead>
+        <tbody>  
+            
+            @for(var i=0; i < cont; i++)
+            {
+                var contadorfor = 0;
+        
+                    <tr>
+                        <th scope="row">@Model.BoletimModels.Discplinas[i].Nome</th>
+                
+                   
+                    @{var listnotas = Model.BoletimModels.Notas.Where(x => x.IdDisciplina == Model.BoletimModels.Discplinas[i].Id);}
+                 
+                    @if(listnotas.Count() == 3)
+                    {
+                        @foreach (var item in listnotas.OrderBy(x => x.Id))
+                        {
+                            if (item.IdDisciplina == Model.BoletimModels.Discplinas[i].Id)
+                            {
+
+                                if (contadorfor == 0)
+                                {
+
+                                    var av1 = Model.BoletimModels.Notas.FirstOrDefault(x => x.Id == item.Id && x.Tipo == "Av1");
+                                    Av1 = av1.Nota.Value;
+                                    if (av1 != null)
+                                    {
+                                        <td>
+                                            @av1.Nota
+                                        </td>
+                                        contadorfor++;
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                        <td>---</td>
+                                        contadorfor++;
+                                        continue;
+
+                                    }
+                                }
+                                else if (contadorfor == 1)
+                                {
+                                    var av2 = Model.BoletimModels.Notas.FirstOrDefault(x => x.Id == item.Id && x.Tipo == "Av2");
+                                    Av2 = av2.Nota.Value;
+                                    if (av2 != null)
+                                    {
+                                        <td>
+                                            @av2.Nota
+                                        </td>
+                                        contadorfor++;
+                                        continue;
+
+                                    }
+                                    else
+                                    {
+                                        <td>---</td>
+                                        contadorfor++;
+                                        continue;
+
+                                    }
+                                }
+                                else if (contadorfor == 2)
+                                {
+                                    var rec = Model.BoletimModels.Notas.FirstOrDefault(x => x.Id == item.Id && x.Tipo == "Re");
+                                    @if (rec != null)
+                                    {
+                                        <td>@rec.Nota </td>
+
+                                    }
+                                    else if (rec == null)
+                                    {
+                                        <td>------</td>
+
+                                    }
+                                }
+                                media = (Av1 + Av2) / 2;
+                                var teste = media > 7 ? "Aprovado" : "Reprovado";
+                                <td>@media</td>
+                                <td>@teste</td>
+                                contadorfor++;
+
+                            }
+                        }
+                    }
+                    else if (listnotas.Count() == 2)
+                    {
+                        @foreach (var item in listnotas.OrderBy(x => x.Id))
+                        {
+                            if (item.IdDisciplina == Model.BoletimModels.Discplinas[i].Id)
+                            {
+
+                                if (contadorfor == 0)
+                                {
+
+                                    var av1 = Model.BoletimModels.Notas.FirstOrDefault(x => x.Id == item.Id && x.Tipo == "Av1");
+                                    Av1 = av1.Nota.Value;
+                                    if (av1 != null)
+                                    {
+                                        <td>
+                                            @av1.Nota
+                                        </td>
+                                        contadorfor++;
+                                        continue;
+                                    }
+                                }
+                                else if (contadorfor == 1)
+                                {
+                                    var av2 = Model.BoletimModels.Notas.FirstOrDefault(x => x.Id == item.Id && x.Tipo == "Av2");
+                                    Av2 = av2.Nota.Value;
+                                    if (av2 != null)
+                                    {
+                                        <td>
+                                            @av2.Nota
+                                        </td>
+
+                                    }
+                                }
+                                media = (Av1 + Av2) / 2;
+                                var teste = media > 7 ? "Aprovado" : "Reprovado";
+                                <td>------</td>
+                                <td>@media</td>
+                                <td>@teste</td>
+
+                            }
+                        }
+                    }
+                    else if(listnotas.Count() == 0)
+                    {
+                   
+                      <td>-------</td>
+                      <td>-------</td>
+                      <td>-------</td>
+                      <td>-------</td>
+                      <td>-------</td>
+                    }
+                    </tr>
+          }
+    </table>
+</body>
+

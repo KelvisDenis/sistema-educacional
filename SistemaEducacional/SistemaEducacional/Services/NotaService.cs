@@ -20,7 +20,8 @@ namespace SistemaEducacional.Services
 
         public  async Task<List<NotasModel>> ListAsync(int? id)
         {
-           return  await context.NotasModels.Include(x=> x.IdAluno).Where(x=> x.IdAluno == id).ToListAsync();
+            var notas =  await context.NotasModels.Where(x => x.IdAluno == id).ToListAsync();
+           return  notas;
         }
     }
 }

@@ -9,15 +9,17 @@ namespace SistemaEducacional.Controllers
     public class AlunoController : Controller
     {
         private readonly IAluno _aluno;
+        private readonly IDisciplina _disciplina;
         private readonly INota _nota;
 
         private readonly Isession isession;
 
-        public AlunoController(INota nota,IAluno aluno, Isession isession)
+        public AlunoController(INota nota, IDisciplina disciplina,IAluno aluno, Isession isession)
         {
             _aluno = aluno;
             _nota = nota;
             this.isession = isession;
+            _disciplina = disciplina;
         }
 
         public async Task<IActionResult> Index()
@@ -42,6 +44,8 @@ namespace SistemaEducacional.Controllers
             var alunos = await _aluno.GetIdAsync(id);
             var notas = await _nota.ListAsync(id);
             FormsView obj = new FormsView { NotasModels = notas, AlunoModel = alunos };
+            obj.BoletimModels.Notas.AddRange(notas);
+            obj.BoletimModels.Discplinas.AddRange(await _disciplina.ListAsync());
             return View(obj);
         }
         [HttpPost]
@@ -51,7 +55,7 @@ namespace SistemaEducacional.Controllers
             var objs = await _aluno.ListAsync();
             return View(nameof(Index), objs);
         }
-        [HttpPost("/Disciplina/Buscar")]
+        [HttpPost("/Aluno/Buscar")]
         public async Task<IActionResult> Buscar(string? nome)
         {
             var aluno = await _aluno.GetAsync(nome);
