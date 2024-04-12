@@ -1,5 +1,8 @@
 ﻿namespace SistemaEducacional.Models.ModelForms
 {
+    /// <summary>
+    /// classe representa a entidade boletim 
+    /// </summary>
     public class BoletimModel
     {
 

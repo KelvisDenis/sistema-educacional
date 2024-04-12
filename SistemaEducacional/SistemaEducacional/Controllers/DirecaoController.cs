@@ -37,12 +37,16 @@ namespace SistemaEducacional.Controllers
         }
         public async Task<IActionResult> Alterar(int? id)
         {
+            
             var obj = await _service.GetIdAsync(id);
             return View(obj);
         }
         [HttpPost]
-        public async Task<IActionResult> Alterar(DirecaoModel? model, string? novaSenha)
+        public async Task<IActionResult> Alterar(DirecaoModel model, string? novaSenha)
         {
+            if (!ModelState.IsValid || model.DataNascimento == null ||
+                model.Cpf == null || model.Email == null || model.Nome == null
+                || novaSenha == null) return View(model);
             await _service.UpdateAsync(model, novaSenha);
             var objs = await _service.ListAsync();
             return View(nameof(Index),objs );

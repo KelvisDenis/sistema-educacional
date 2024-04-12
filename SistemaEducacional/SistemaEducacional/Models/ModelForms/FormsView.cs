@@ -1,5 +1,9 @@
 ﻿namespace SistemaEducacional.Models.ModelForms
 {
+    /// <summary>
+    /// classe contem  todas as models
+    /// Serve para usar mais de uma model em uma view
+    /// </summary>
     public class FormsView
     {
         public TurmaModel? TurmaModel { get; set; }

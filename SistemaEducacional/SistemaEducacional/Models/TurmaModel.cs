@@ -1,5 +1,8 @@
 ﻿namespace SistemaEducacional.Models
 {
+    /// <summary>
+    /// representa a entidade Turma no banco de dados 
+    /// </summary>
     public class TurmaModel
     {
         public int Id { get; set; }
@@ -9,6 +12,9 @@
         public List<DocenteModel>? Docentes { get; set; }
         public List<AlunoModel>? Alunos { get; set; }
 
+        /// <summary>
+        /// construtores
+        /// </summary>
         public TurmaModel() { }
         public TurmaModel(int id, string? nomeTurma, string? anoTurma, DateTime? dataCriacao)
         {
@@ -17,18 +23,15 @@
             AnoTurma = anoTurma;
             DataCriacao = dataCriacao;
         }
+        /// <summary>
+        /// metodo para checar se a data não é maior que a atual 
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public bool CheckDateValid(DateTime date)
         {
             var check = (date < DateTime.Now);
             return check;
-        }
-        public void AddDocente(DocenteModel docente)
-        {
-            Docentes.Add(docente);
-        }
-        public void AddAluno(AlunoModel aluno)
-        {
-            Alunos.Add(aluno);
         }
     }
 }

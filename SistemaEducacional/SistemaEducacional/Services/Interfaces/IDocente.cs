@@ -2,6 +2,11 @@
 
 namespace SistemaEducacional.Services.Interfaces
 {
+    /// <summary>
+    /// Interface define contrato com a classe DocenteService
+    /// usado para Introduzir as ações a serem feitas na classe DocenteService, onde se manipula a entidade
+    /// Docente
+    /// </summary>
     public interface IDocente
     {
         public Task CreateAsync(DocenteModel? model);

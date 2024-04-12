@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using SistemaEducacional.Models;
-using SistemaEducacional.Services;
 using SistemaEducacional.Services.Interfaces;
 using SistemaEducacional.Services.Session;
-using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SistemaEducacional.Controllers
 {
@@ -63,6 +62,17 @@ namespace SistemaEducacional.Controllers
         {
             _Isession.RemoveSession();
             return View(nameof(Index));
+        }
+        [Route("/Home/Error")]
+        public IActionResult HandleError()
+        {
+            ViewBag.error = "Erro!";
+            return View(nameof(Error));
+        }
+        public IActionResult Error()
+        {
+            ViewBag.error = "Erro!";
+            return View(nameof(Error));
         }
 
     }
