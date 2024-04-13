@@ -1,6 +1,10 @@
 ﻿@model SistemaEducacional.Models.DisciplinaModel
 <form asp-controller="Disciplina" asp-action="Create">
     <h2 style="margin-left:400px">Disciplina</h2>
+    @if (ViewBag.erro != null)
+    {
+        <span style="margin-left:400px; margin-block:10px; color: brown"><strong>@ViewBag.erro</strong></span>
+    }
             <div class="row"> 
                 <div class="container text-center">
                     <div class="row d-flex justify-content-center">

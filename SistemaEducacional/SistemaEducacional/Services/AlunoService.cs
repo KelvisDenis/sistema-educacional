@@ -79,12 +79,10 @@ namespace SistemaEducacional.Services
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
         public async Task UpdateAsync(AlunoModel model)
-        {
-            var aluno = await _context.AlunoModels.FirstOrDefaultAsync(x => x.Nome == model.Nome);
+        {;
             try
             {
-                aluno = model;
-                _context.Update(aluno);
+                _context.Update(model);
                 await _context.SaveChangesAsync();
             }catch(Exception ex)
             {
@@ -92,10 +90,19 @@ namespace SistemaEducacional.Services
             }
         }
         /// <summary>
-        /// buca um objeto do tipo aluno por nome, no banco de dados
+        /// buca um objeto do tipo aluno por cpf, no banco de dados
         /// </summary>
         /// <param name="nome"></param>
         /// <returns>um objeto do tipo AlunoModel</returns>
+        public async Task<AlunoModel> GetCpfAsync(string? cpf)
+        {
+            return await _context.AlunoModels.FirstOrDefaultAsync(x => x.Cpf == cpf);
+        }
+        /// <summary>
+        /// busca objeto pelo nome no banco de dados
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns>retorna objeto do tipo AlunoModel </returns>
         public async Task<AlunoModel> GetAsync(string? nome)
         {
             return await _context.AlunoModels.FirstOrDefaultAsync(x => x.Nome == nome);

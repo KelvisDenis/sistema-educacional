@@ -7,7 +7,7 @@
     public class FormsView
     {
         public TurmaModel? TurmaModel { get; set; }
-        public DocenteModel? DocenteModel { get; set; }
+        public List<DocenteModel>? DocenteModel { get; set; }
         public List<DisciplinaModel>? DisciplinaModel { get; set;}
         public DirecaoModel? DirecaoModel { get; set; }
         public CheckModel? CheckModel { get; set; }

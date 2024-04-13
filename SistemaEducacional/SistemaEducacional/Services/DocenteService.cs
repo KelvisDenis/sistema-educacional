@@ -91,7 +91,7 @@ namespace SistemaEducacional.Services
         {
             try
             {
-                if (await _context.DocenteModels.AnyAsync(x => x.Id == model.Id)) throw new Exception("not found");
+                if (!await _context.DocenteModels.AnyAsync(x => x.Id == model.Id)) throw new Exception("not found");
 
                 _context.DocenteModels.Update(model);
                 _context.SaveChanges();

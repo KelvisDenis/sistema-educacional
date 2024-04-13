@@ -1,5 +1,102 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model SistemaEducacional.Models.ModelForms.FormsView
 @{
+    var teste = "";
 }
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card" style="width: 900px">
+            <div class="card-body">
+                <div style="margin-right:60px; margin-block-end:30px">
+                    <small class="card-title">
+                        <strong>
+                            ALterar Direção
+                        </strong>
+                    </small>
+                </div>
+
+                <form asp-controller="Turma" asp-action="Create">
+                    <input type="hidden" asp-for="@Model.TurmaModel.Id" />
+                    <div class="container text-center">
+                        <div class="row d-flex justify-content-center">
+                            <label for="usuario" class="col-sm-2 col-form-label">
+                                <small><strong>Nome</strong></small>
+                            </label>
+
+                            <div class="col-auto">
+                                <input asp-for="@Model.TurmaModel.NomeTurma" type="text"  class="form-control align-content-xl-center" id="usuario">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <label for="usuario" class="col-sm-2 col-form-label">
+                                <small><strong>Nome</strong></small>
+                            </label>
+
+                            <div class="col-auto">
+                                <input asp-for="@Model.TurmaModel.AnoTurma" type="text"  class="form-control align-content-xl-center" id="usuario">
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <label for="senha" class="col-sm-2 col-form-label">
+                                <small><strong>Data Criação</strong></small>
+                            </label>
+                            <div class="col-auto text-center">
+                                <input asp-for="@Model.TurmaModel.DataCriacao" type="date" class="form-control" id="senha">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="dropdown dropup">
+                            <button style="margin-right:300px" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                Vincular docente
+                            </button>
+                            <ul class=" dropdown-menu">
+                                <li>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body" style="width:500px">
+                                                    <strong class="card-title">
+                                                        <small style="margin-left:180px">Vincular docente</small><hr />
+                                                    </strong>
+                                                    <p class="card-text" style="margin-left:180px">Docente</p>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <select id="lista-conteudos" style="margin-left:180px" asp-for="@Model.CheckModel.NomeDOcente" asp-items="@(new SelectList(Model.DocenteModel, "Id", "Nome" ))" class="form-select">
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col">
+
+                                                        <div id="check" style="margin-left:100px; padding-right:50px " data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+
+                                                            @foreach (var item in Model.DisciplinaModel)
+                                                            {
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox" value="" id="Default_@item.Id">
+                                                                    <label class="form-check-label" for="Default_@item.Id">
+                                                                        @item.Nome
+                                                                    </label>
+                                                                </div>
+
+                                                            }
+                                                            </select>
+
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                </li>
+                            </ul>
+
+                            <div style="margin-left:200px; margin-top:30px">
+                                <input class="btn btn-outline-secondary" type="submit" value="Alterar" />
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

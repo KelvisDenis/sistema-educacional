@@ -15,5 +15,6 @@ namespace SistemaEducacional.Services.Interfaces
         public Task<ICollection<AlunoModel>> ListAsync();
         public Task DeleteAsync(int? id);
         public Task UpdateAsync(AlunoModel? id);
+        public Task<AlunoModel> GetCpfAsync(string? cpf);
     }
 }

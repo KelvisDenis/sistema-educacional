@@ -107,8 +107,8 @@ namespace SistemaEducacional.Services
             {
                 if(!await _context.DirecaoModels.AnyAsync(x=> x.Id == model.Id)) throw new Exception("Error!");
                 var user = await _context.DirecaoModels.FirstOrDefaultAsync(x => x.Id == model.Id);
-                model.Senha = senha == null ? user.Senha : senha;
-                if (!user.CheckSenha(model.Senha)) throw new Exception("Error!");
+                senha = senha == null ? user.Senha : senha;
+                if (!user.CheckSenha(senha)) throw new Exception("Error!");
                 user.Cpf = model.Cpf;
                 user.Senha = model.Senha;
                 user.DataNascimento = model.DataNascimento;

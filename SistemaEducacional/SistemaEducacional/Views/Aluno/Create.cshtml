@@ -2,17 +2,26 @@
 @{
     Random hash = new Random();
 }
+
 <form asp-controller="Aluno" asp-action="Create">
+    
     <h2 style="margin-left:400px">Aluno</h2>
     <div class="row">
+        @if (ViewBag.erro != null)
+        {
+            <span style="margin-left:400px; margin-block:10px; color: brown"><strong>@ViewBag.erro</strong></span>
+        }
         <div class="container text-center">
             <div class="row d-flex justify-content-center">
+               
                 <label for="usuario" class="col-sm-2 col-form-label">
                     <small><strong>Nome</strong></small>
                 </label>
 
                 <div class="col-auto">
                     <input asp-for="@Model.Nome" type="text" class="form-control align-content-xl-center" id="usuario">
+                    <span asp-validation-for="@Model.Nome"></span>
+                    
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
@@ -22,6 +31,7 @@
 
                 <div class="col-auto">
                     <input asp-for="@Model.Cpf" type="text" class="form-control align-content-xl-center" id="usuario">
+                    <span asp-validation-for="@Model.Cpf"></span>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
@@ -29,7 +39,8 @@
                     <small><strong>Data Criação</strong></small>
                 </label>
                 <div class="col-auto text-center">
-                    <input asp-for="@Model.DataNascimento" type="date" class="form-control" id="senha">
+                    <input asp-for="@Model.DataNascimento" type="date" class="form-control"/>
+                    <span asp-validation-for="@Model.DataNascimento"></span>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
@@ -38,7 +49,8 @@
                 </label>
 
                 <div class="col-auto">
-                    <input asp-for="Email" type="text" class="form-control align-content-xl-center" id="email">
+                    <input name="Email" asp-for="@Model.Email" type="text" class="form-control align-content-xl-center"/>
+                    <span asp-validation-for="@Model.Email"></span>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
@@ -47,12 +59,13 @@
                 </label>
 
                 <div class="col-auto">
-                    <input type="text" asp-for="SenhaTemporaria" value="@hash.Next()"></input>
+                    <input name="senhaTemporaria" asp-for="@Model.SenhaTemporaria" type="text" value="@hash.Next()"/>
+                    <span asp-validation-for="@Model.SenhaTemporaria"></span>
                 </div>
             </div>
             <br />
             <div style="margin-left:200px; margin-top:30px">
-                <input asp-for="@Model.SenhaTemporaria" class="btn btn-outline-secondary" type="submit" value="Criar" />
+                <input class="btn btn-outline-secondary" type="submit" value="Criar" />
             </div>
         </div>
     </div>

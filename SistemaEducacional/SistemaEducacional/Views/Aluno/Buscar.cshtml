@@ -1,11 +1,15 @@
 ﻿@model SistemaEducacional.Models.AlunoModel
 
 <nav class="navbar bg-body-tertiary">
+    <h2 style="margin-left:400px">Aluno</h2>
+    
+    <a style="margin-right: 300px; width:50px" type="submit" asp-controller="Aluno" asp-action="Create" class="btn btn-outline-secondary">+</a>
     <div style="margin-left:350px" class="container-fluid">
         <form asp-action="Buscar" class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="nome">
             <button class="btn btn-outline-success" type="submit">Pesquisar</button>
         </form>
+       
     </div>
 </nav>
 
@@ -19,22 +23,20 @@
         </tr>
     </thead>
     <tbody>
-        @if (Model != null)
+        @if (Model.Id != 0)
         {
             <tr>
                 <th scope="row">@Model.Nome</th>
                 <td>@Model.Cpf</td>
-                <td>@Model.DataNascimento.Value</td>
+                <td>@Model.DataNascimento</td>
                 <td>
-                    <a asp-route-id="@Model.Id" asp-action="Alterar">Alterar</a>
-                    <a asp-route-id="@Model.Id" asp-action="Excluir">Excluir</a>
+                    <a asp-route-id="@Model.Id" asp-controller="Aluno" asp-action="Emitir">Emitir Boleto</a>
+                   
                 </td>
             </tr>
 
 
-        }
-        @{
-            else
+        }else 
             {
                 <tr>
                     <th scope="row">Não Encontrado</th>
@@ -45,9 +47,6 @@
                     </td>
                 </tr>
             }
-
-        }
-
     </tbody>
 </table>
 

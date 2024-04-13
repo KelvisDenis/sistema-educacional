@@ -8,7 +8,6 @@ namespace SistemaEducacional.Models
     public class AlunoModel
     {
         public int Id { get; set; }
-        [Required]
         [StringLength(100)]
         public string? Nome { get; set; }
         [Required]
@@ -18,12 +17,14 @@ namespace SistemaEducacional.Models
         [DataType(DataType.Date)]
         
         public DateTime? DataNascimento { get; set; }
-        public int? IdTurma { get; private set; }
+        public int? IdTurma { get; set; }
      
-        public int? IdNota { get; private set; }
-        public string? Email { get; private set; }
-        public string? SenhaTemporaria { get; private set; }
-        public ICollection<NotasModel> Notas { get; set; }  
+        public int? IdNota { get;  set; }
+        [EmailAddress()]
+        public string? Email { get;  set; }
+        [StringLength(maximumLength: 80,MinimumLength =8)]
+        public string? SenhaTemporaria { get; set; }
+        public ICollection<NotasModel>? Notas { get; set; }  
 
         /// <summary>
         /// Construtores da classe
@@ -46,9 +47,9 @@ namespace SistemaEducacional.Models
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
-        public bool CheckDate(DateTime date)
+        public bool CheckDate(DateTime? date)
         {
-            var check = (date < DateTime.Now);
+            var check = (date < DateTime.Now );
             return check;
         }
     }

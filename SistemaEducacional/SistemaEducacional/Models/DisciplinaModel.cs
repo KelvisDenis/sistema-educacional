@@ -32,7 +32,7 @@ namespace SistemaEducacional.Models
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
-        public bool CheckDate(DateTime date)
+        public bool CheckDate(DateTime? date)
         {
             var check = (date < DateTime.Now);
             return check;
