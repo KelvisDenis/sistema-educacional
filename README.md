@@ -15,7 +15,7 @@ Requisitos de Sistema:
 
 Instalação:
  Clone este repositório: https://github.com/KelvisDenis/sistema-educacional;
- Abra o projeto no Visual Studio ou na sua IDE preferida.;
+ Abra o projeto no Visual Studio de preferencia ou na sua IDE preferida;
  Restaure os pacotes NuGet necessários;
 
 Configuração:
