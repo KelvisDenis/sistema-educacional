@@ -2,7 +2,7 @@
 {
     public class CheckModel
     {
-        public string? NomeDOcente { get; set; }
-        public string? Disciplina { get; set; }
+        public int? idDoscente { get; set; }
+        public string? disciplina { get; set; }
     }
 }

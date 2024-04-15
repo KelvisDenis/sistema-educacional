@@ -1,8 +1,5 @@
 ﻿@model SistemaEducacional.Models.DirecaoModel
-@{
-    var teste = true;
 
-}
 <div class="row">
     <div class="col-sm-6 mb-3 mb-sm-0">
         <div class="card" style="width: 900px">
@@ -10,13 +7,12 @@
                 <div style="margin-right:60px; margin-block-end:30px">
                     <small class="card-title">
                         <strong>
-                            ALterar Direção
+                            Criar Direção
                         </strong>
                     </small>
                 </div>
 
-                <form asp-controller="Home" asp-action="Alterar">
-                    <input type="hidden" value="@Model.Id" asp-for="@Model.Id" />
+                <form asp-controller="Home" asp-action="Create">
                     <div class="container text-center">
                         <div class="row d-flex justify-content-center">
                             <label for="usuario" class="col-sm-2 col-form-label">
@@ -24,7 +20,7 @@
                             </label>
 
                             <div class="col-auto">
-                                <input asp-for="@Model.Nome" type="text" value="@Model.Nome" class="form-control align-content-xl-center" id="usuario">
+                                <input asp-for="@Model.Nome" type="text" class="form-control align-content-xl-center" id="usuario">
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
@@ -32,7 +28,7 @@
                                 <small><strong>Cpf</strong></small>
                             </label>
                             <div class="col-auto text-center">
-                                <input asp-for="@Model.Cpf" value="@Model.Cpf" type="text" class="form-control" id="senha">
+                                <input asp-for="@Model.Cpf" type="text" class="form-control" id="senha">
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
@@ -49,41 +45,18 @@
 
                             </label>
                             <div class="col-auto text-center">
-                                <input asp-for="@Model.Email" value="@Model.Email" type="text" class="form-control" id="senha">
+                                <input asp-for="@Model.Email"  type="text" class="form-control" id="senha">
                             </div>
                         </div>
                         <br />
-                        <div class="dropup-center dropend">
-                            <button style="margin-right:500px" class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Alterar Senha
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark" style="width:700px; margin-block:400px;">
                                 <div class="row d-flex justify-content-center">
                                     <label for="senha" class="col-sm-2 col-form-label">
-                                        <small><strong>Senha antiga</strong></small>
-                                    </label>
-                                    <div class="col-auto text-center">
-                                        <input type="text" class="form-control" id="senha" name="senhaAntiga">
-                                    </div>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <label for="senha" class="col-sm-2 col-form-label">
-                                        <small><strong>Nova senha</strong></small>
-                                    </label>
-                                    <div class="col-auto text-center">
-                                        <input type="text" class="form-control" id="senha" name="novaSenha">
-                                    </div>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <label for="senha" class="col-sm-2 col-form-label">
-                                        <small><strong>Confirmar senha</strong></small>
+                                        <small><strong>Digite a sua senha</strong></small>
                                     </label>
                                     <div class="col-auto text-center">
                                         <input asp-for="@Model.Senha" value="" type="text" class="form-control" id="senha" name="confirmarSenha">
                                     </div>
                                 </div>
-                            </ul>
-                        </div>
                         <div style="margin-left:200px; margin-top:30px">
                             <input class="btn btn-outline-secondary" type="submit" name="name" value="Alterar" />
                         </div>

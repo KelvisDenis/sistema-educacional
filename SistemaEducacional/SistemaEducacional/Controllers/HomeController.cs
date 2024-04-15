@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SistemaEducacional.Models;
 using SistemaEducacional.Services.Interfaces;
@@ -41,6 +42,31 @@ namespace SistemaEducacional.Controllers
         /// <param name="usuario"></param>
         /// <param name="senha"></param>
         /// <returns>View Home</returns>
+        public async Task<IActionResult> Create()
+        {
+           
+             return View();
+        }
+        /// <summary>
+        /// Cria um diretor 
+        /// </summary>
+        /// <param name="ConfSenha"></param>
+        /// <param name="model"></param>
+        /// <returns>Uma IActionResult com os diretores</returns>
+        [HttpPost]
+        public async Task<IActionResult> Create(DirecaoModel? model)
+        {
+            try
+            {
+                if (!ModelState.IsValid|| _direcao.GetLoginAsync(model.Email) != null) return View(model);
+                await _direcao.CreateAsync(model);
+                var obj = await _direcao.ListAsync();
+                 _Isession.CreateSession(model);
+                return RedirectToAction(nameof(Home));
+            }
+            catch (Exception ex) { return View(nameof(Error)); }
+
+        }
         [HttpPost("/Login/")]
         public async Task<IActionResult> Login(string usuario, string senha)
         {

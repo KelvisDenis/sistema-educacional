@@ -1,7 +1,5 @@
 ﻿@model SistemaEducacional.Models.ModelForms.FormsView
-@{
-    var teste = "";
-}
+
 <div class="row">
     <div class="col-sm-6 mb-3 mb-sm-0">
         <div class="card" style="width: 900px">
@@ -14,7 +12,7 @@
                     </small>
                 </div>
 
-                <form asp-controller="Turma" asp-action="Alterar">
+                <form asp-controller="Turma" method="post" asp-action="Alterar" id="for">
                     <input type="hidden" value="@Model.TurmaModel.Id" asp-for="@Model.TurmaModel.Id" />
                     <div class="container text-center">
                         <div class="row d-flex justify-content-center">
@@ -60,7 +58,7 @@
                                                     <p class="card-text" style="margin-left:180px">Docente</p>
                                                     <div class="row">
                                                         <div class="col-4">
-                                                            <select  id="lista-conteudos" style="margin-left:180px" asp-for="@Model.CheckModel.NomeDOcente" asp-items="@(new SelectList(Model.TurmaModel.Docentes, "Id", "Nome" ))" class="form-select">
+                                                            <select id="lista-conteudos" style="margin-left:180px"  asp-items="@(new SelectList(Model.TurmaModel.Docentes.OrderBy(x=> x.Id), "Id", "Nome" ))" class="form-select">
                                                             </select>
                                                         </div>
 
@@ -72,11 +70,11 @@
                                                                 @foreach (var item in Model.DisciplinaModel)
                                                                 {
                                                                     <div class="form-check">
-                                                                            <input class="form-check-input" type="checkbox" value="" id="Default_@item.Id" >
+                                                                            <input onclick="func()" name="inputcheck" class="form-check-input" type="radio" value="@item.Nome" id="Default_@item.Id" >
                                                                             <label class="form-check-label" for="Default_@item.Id">
                                                                                 @item.Nome
                                                                             </label>
-                                                                        </div>
+                                                                    </div>
                                                               
                                                                 }
                                                             </select>
@@ -88,29 +86,81 @@
                                                 </div>
 
                                             </div>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
 
                             <div style="margin-left:200px; margin-top:30px">
-                                <input class="btn btn-outline-secondary" type="submit" value="Alterar" />
+                                <input id="su" class="btn btn-outline-secondary" type="submit" value="Alterar" />
                             </div>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-    <script>
-    var ch = document.getElementsByClassName("scrollspy-example");
-        var select = document.getElementById('lista-conteudos') 
-        select.addEventListener('click', function () {
-        ch.checked = false
-        
-               
-            
-            
-        })
-   
+    <script> 
+        var obj = [];
+        var sub = document.getElementById("su");
+    var ch = document.getElementsByName("inputcheck");
+        var select = document.getElementById('lista-conteudos');
 
-        
+        select.addEventListener('change', function () {
+            if (obj.length > 0) {
+            for (let item of obj) {
+                if (item.idDoscente == select.value) {
+                    for (var count = 0; count < @Model.DisciplinaModel.Count; count++) {
+                        if (ch[count].value == item.disciplina) {
+                            ch[count].checked = true;
+                        };
+                    };
+                };
+            };
+        };
+        });
+
+
+        const func = function func() {
+            for (var i = 0; i < @Model.DisciplinaModel.Count; i++) {
+                if (ch[i].checked == true && obj.length == 0) {
+                    obj.push({
+                    "idDoscente": select.value,
+                        "disciplina": ch[i].value
+                    });
+                } else if (ch[i].checked == true && obj.length > 0) {
+                    var ind;
+                    var teste = false;
+                    for (var indice = 0; indice < obj.length; indice++) {
+                        if (obj[indice].IdDoscente == select.value) {
+                            teste = true;
+                            ind = indice;
+                            break;
+                        } 
+                    };
+                    if (teste == true) {
+                        obj.splice(ind, 1); obj.push({
+                        "idDoscente": select.value,
+                        "Disciplina": ch[i].value
+                        });
+                    } else {
+                        obj.push({
+                        "idDoscente": select.value,
+                        "disciplina": ch[i].value
+                        });
+                    };
+                };
+            };
+        console.log(obj);
+            };
+     
+        sub.addEventListener('click', function (e) {
+            e.preventDefault();
+            var email = JSON.stringify([obj] );
+            console.log("antes");
+            $.post('/Turma/Alterar', {Email: email});
+        });
+
+
     </script>

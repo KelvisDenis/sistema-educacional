@@ -18,9 +18,10 @@ namespace SistemaEducacional.Models
         [DataType(DataType.Date)]
 
         public DateTime? DataNascimento { get; set; }
-        public int? IdTurma { get; private set; }
-        public string? Email { get; private set; }
-        public string? SenhaTemporaria { get; private set; }
+        public int? IdTurma { get; set; }
+        public string? Email { get; set; }
+        public string? SenhaTemporaria { get;  set; }
+        public string? Formacao { get;  set; }
 
         /// <summary>
         /// construtores
@@ -28,7 +29,7 @@ namespace SistemaEducacional.Models
         public DocenteModel() { }
 
         public DocenteModel(int id, string? nome, string? email, string? senha,
-            string? cpf, DateTime? dataNascimento, int? idTurma)
+            string? cpf, DateTime? dataNascimento, int? idTurma, string? formacao)
         {
             Id = id;
             Nome = nome;
@@ -37,6 +38,7 @@ namespace SistemaEducacional.Models
             IdTurma = idTurma;
             Email = email;
             SenhaTemporaria = senha;
+            Formacao = formacao;
         }
         /// <summary>
         /// metodo para checar se a data não é maior que a atual 

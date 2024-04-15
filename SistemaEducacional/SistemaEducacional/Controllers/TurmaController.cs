@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using SistemaEducacional.Models;
 using SistemaEducacional.Models.ModelForms;
 using SistemaEducacional.Services.Interfaces;
@@ -48,7 +49,11 @@ namespace SistemaEducacional.Controllers
             return View(model.OrderBy(x => x.Id));
         }
 
-
+        /// <summary>
+        /// não fanalizado
+        /// Exibir tela de crição de turma
+        /// </summary>
+        /// <returns>Uma IActionResult de crição de turma </returns>
         public async Task<IActionResult> Create()
         {
             var log = _session.GetSession();
@@ -69,16 +74,28 @@ namespace SistemaEducacional.Controllers
             var disciplina = await _disciplina.ListAsync() as List<DisciplinaModel>;
             var aluno = await _aluno.GetIdAsync(id);
             FormsView forms = new FormsView { TurmaModel = turma, DisciplinaModel = disciplina.ToList(), AlunoModel = aluno };
+            forms.CheckModel = new CheckModel();
             return View(forms);
         }
         /// <summary>
+        /// Não finalizado
         /// Altera os dados da turma 
         /// </summary>
         /// <param name="model"></param>
         /// <returns>View Index</returns>
         [HttpPost]
-        public async Task<IActionResult> Alterar(FormsView? model)
-        {
+        [Route("Turma/Alterar/")]
+        public async Task<IActionResult> Alterar(FormsView? model, string email)
+         {
+            ///não finalidado
+            var dic = email.ToString().Split(",");
+            string[] lista;
+            for (var i=0; i<dic.Length; i++  )
+            {
+                var t =  dic[i].Split("\\");
+                lista = t[i].Split(':');
+            }
+           
             await _turma.UpdateAsync(model.TurmaModel);
             var objs = await _turma.ListAsync();
             return View(nameof(Index), objs);

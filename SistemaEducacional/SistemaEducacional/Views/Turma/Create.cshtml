@@ -9,7 +9,7 @@
                 <div style="margin-right:60px; margin-block-end:30px">
                     <small class="card-title">
                         <strong>
-                            ALterar Direção
+                            Criar turma
                         </strong>
                     </small>
                 </div>
@@ -60,7 +60,7 @@
                                                     <p class="card-text" style="margin-left:180px">Docente</p>
                                                     <div class="row">
                                                         <div class="col-4">
-                                                            <select id="lista-conteudos" style="margin-left:180px" asp-for="@Model.CheckModel.NomeDOcente" asp-items="@(new SelectList(Model.DocenteModel, "Id", "Nome" ))" class="form-select">
+                                                            <select id="lista-conteudos" style="margin-left:180px"  asp-items="@(new SelectList(Model.DocenteModel, "Id", "Nome" ))" class="form-select">
                                                             </select>
                                                         </div>
 

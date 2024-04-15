@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|c:\\users\\denis\\music\\sistema educ\\sistemaeducacional\\sistemaeducacional\\controllers\\turmacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|solutionrelative:sistemaeducacional\\controllers\\turmacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|c:\\users\\denis\\music\\sistema educ\\sistemaeducacional\\sistemaeducacional\\models\\modelforms\\checkmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|solutionrelative:sistemaeducacional\\models\\modelforms\\checkmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|c:\\users\\denis\\music\\sistema educ\\sistemaeducacional\\sistemaeducacional\\views\\turma\\alterar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|solutionrelative:sistemaeducacional\\views\\turma\\alterar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|c:\\users\\denis\\music\\sistema educ\\sistemaeducacional\\sistemaeducacional\\views\\turma\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{123F066F-5602-4EF9-8E78-88C7D5A73D49}|SistemaEducacional\\SistemaEducacional.csproj|solutionrelative:sistemaeducacional\\views\\turma\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Views\\Turma\\Create.cshtml",
+              "RelativeDocumentMoniker": "SistemaEducacional\\Views\\Turma\\Create.cshtml",
+              "ToolTip": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Views\\Turma\\Create.cshtml",
+              "RelativeToolTip": "SistemaEducacional\\Views\\Turma\\Create.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAjwD4AAABzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-14T20:28:37.608Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CheckModel.cs",
+              "DocumentMoniker": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Models\\ModelForms\\CheckModel.cs",
+              "RelativeDocumentMoniker": "SistemaEducacional\\Models\\ModelForms\\CheckModel.cs",
+              "ToolTip": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Models\\ModelForms\\CheckModel.cs",
+              "RelativeToolTip": "SistemaEducacional\\Models\\ModelForms\\CheckModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T21:51:17.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Alterar.cshtml",
               "DocumentMoniker": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Views\\Turma\\Alterar.cshtml",
               "RelativeDocumentMoniker": "SistemaEducacional\\Views\\Turma\\Alterar.cshtml",
               "ToolTip": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Views\\Turma\\Alterar.cshtml",
               "RelativeToolTip": "SistemaEducacional\\Views\\Turma\\Alterar.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAApAAAA",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAjwIsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-13T14:31:27.294Z",
+              "WhenOpened": "2024-04-13T17:12:09.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TurmaController.cs",
+              "DocumentMoniker": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Controllers\\TurmaController.cs",
+              "RelativeDocumentMoniker": "SistemaEducacional\\Controllers\\TurmaController.cs",
+              "ToolTip": "C:\\Users\\denis\\Music\\Sistema educ\\SistemaEducacional\\SistemaEducacional\\Controllers\\TurmaController.cs",
+              "RelativeToolTip": "SistemaEducacional\\Controllers\\TurmaController.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAAADcAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T14:47:59.33Z",
               "EditorCaption": ""
             }
           ]
